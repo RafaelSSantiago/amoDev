@@ -1,3 +1,17 @@
-.carPrice{
-    color: #d35400;
+.carPriceColor {
+    color: #d35400 !important;
+    font-weight: bolder !important;
+    font-size: 20px !important;
+}
+
+.info {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
+}
+
+.titulo {
+    font-size: 13px;
+    color: #b0b0b0;
+    font-weight: 650;
+    margin-top: 1px;
 }

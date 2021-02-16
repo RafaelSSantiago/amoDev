@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import api from './Api';
 import ListItem from './components/ListItem';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 class App extends Component {
 
@@ -22,12 +23,10 @@ class App extends Component {
 
     return (
       <div>
-        <h1>Listar os carros</h1>
         {console.log(carros)}
-        <Grid container spacing={3}>
+        <Grid container item spacing={1}>
           {carros.map(carro => (
-            <Grid item xs={3}>
-
+            <Grid item sm={2} spacing={3}>
               <ListItem
                 brand={carro.nameBrand}
                 model={carro.nameModel}

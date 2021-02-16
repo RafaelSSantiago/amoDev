@@ -5,37 +5,42 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import '../styles/ListItem.css'
 
-const useStyles = makeStyles((theme) => ({
-  carPrice: {
-    color: 'red'
-  },
-}));
+
 
 class ListItem extends Component {
 
   render() {
     return (
-      <Card>
+      <Card style={{ borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }}>
         <CardActionArea>
           <CardMedia
             component="img"
-            alt="Contemplative Reptile"
-            height="140"
+            alt="Carro"
+            height="270"
             image={this.props.image}
-            title="Contemplative Reptile"
+            title="carro"
           />
           <CardContent>
-            <Typography gutterBottom variant="subtitle2" >
-              {this.props.brand} {this.props.model}
-            </Typography>
-            <Typography variant="subtitle2">
-            {this.props.year} | {this.props.km}km | Transmissão {this.props.fuel}
-            </Typography>
-            <Typography className="carPrice" variant="body2" color="textSecondary" component="p">
-              R$ {this.props.price ? this.props.price.toFixed(2) : "0,00" } 
-            </Typography>
+              <Grid container item xs sm>
+                <Typography  className="titulo" label="Filled" variant="filled">
+                  {this.props.brand} {this.props.model}
+                </Typography>
+              </Grid>
+              <Grid container item xs spacing={1}>
+                <Grid item xs sm>
+                  <Typography className="info" variant="h7">
+                    {this.props.year} | Transmissão {this.props.fuel === "gasolina" ? this.props.fuel : "flex"} | {this.props.km}km
+                  </Typography>
+                </Grid>
+              <Grid item xs sm>
+                <Typography  className="carPriceColor" variant="h6">
+                  {this.props.price ? this.props.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) : "0,00"}
+                </Typography>
+              </Grid>
+              </Grid>
           </CardContent>
         </CardActionArea>
       </Card>
