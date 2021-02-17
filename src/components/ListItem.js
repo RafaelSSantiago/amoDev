@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -24,8 +23,8 @@ class ListItem extends Component {
             title="carro"
           />
           <CardContent>
-              <Grid container item xs sm>
-                <Typography  className="titulo" label="Filled" variant="filled">
+              <Grid  container item xs sm>
+                <Typography style={{marginBottom: "8px", marginTop: "-10px"}} className="titulo" label="Filled" variant="filled">
                   {this.props.brand} {this.props.model}
                 </Typography>
               </Grid>
